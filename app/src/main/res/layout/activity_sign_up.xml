@@ -82,7 +82,7 @@
             android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/black"
             android:text="Sign Up"
             android:textSize="18sp"
@@ -93,12 +93,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:padding="8dp"
             android:text="Registered? Login"
             android:textAlignment="center"
             android:textColor="@color/lavender"
             android:textSize="18sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

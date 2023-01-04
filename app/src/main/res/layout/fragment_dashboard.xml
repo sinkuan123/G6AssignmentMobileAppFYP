@@ -19,4 +19,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/comment"
+        android:layout_width="197dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="Comment"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_dashboard"
+        app:layout_constraintStart_toStartOf="@+id/text_dashboard"
+        app:layout_constraintTop_toTopOf="@+id/text_dashboard" />
 </androidx.constraintlayout.widget.ConstraintLayout>

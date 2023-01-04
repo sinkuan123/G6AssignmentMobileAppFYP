@@ -10,9 +10,8 @@
 
     <TextView
         android:id="@+id/textHome"
-        android:layout_width="404dp"
-        android:layout_height="323dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="388dp"
+        android:layout_height="327dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/shape"
@@ -22,10 +21,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <TextView
         android:id="@+id/title"
@@ -89,18 +88,18 @@
         app:layout_constraintVertical_bias="0.883" />
 
     <Button
-        android:id="@+id/comment"
+        android:id="@+id/upload"
         android:layout_width="197dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/black"
-        android:text="Comment"
+        android:text="UPload"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textHome"
         app:layout_constraintEnd_toEndOf="@+id/textHome"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/textHome"
         app:layout_constraintTop_toTopOf="@+id/textHome"
-        app:layout_constraintVertical_bias="0.932" />
+        app:layout_constraintVertical_bias="0.699" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -114,5 +113,17 @@
         app:layout_constraintStart_toStartOf="@+id/download"
         app:layout_constraintTop_toTopOf="@+id/download"
         app:layout_constraintVertical_bias="0.538" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/stat_sys_upload"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/upload"
+        app:layout_constraintEnd_toEndOf="@+id/upload"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="@+id/upload"
+        app:layout_constraintTop_toTopOf="@+id/upload" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

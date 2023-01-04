@@ -13,8 +13,10 @@
         android:theme="@style/Theme.Android_assignment"
         tools:targetApi="31">
 
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -27,8 +29,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
 
     </application>
 
