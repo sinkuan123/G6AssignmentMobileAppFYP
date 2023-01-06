@@ -92,7 +92,7 @@
         android:layout_width="197dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/black"
-        android:text="UPload"
+        android:text="Upload"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/textHome"
         app:layout_constraintEnd_toEndOf="@+id/textHome"

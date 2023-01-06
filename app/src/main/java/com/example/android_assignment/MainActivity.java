@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         Button download = findViewById(R.id.download);
         Button logout = findViewById(R.id.logout);
+        Button upload = findViewById(R.id.upload);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_fragment_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,25 +81,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, UploadPdf.class));
+            }
+        });
     }
 
     public void download() {
-        storagereference = firebasestorage.getInstance().getReference();
-        ref = storagereference.child("mobile.pdf");
-
-        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String url = uri.toString();
-                downloadFiles(MainActivity.this, "mobile", ".pdf", DIRECTORY_DOWNLOADS, url);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Context context = getApplicationContext();
-                Toast.makeText(context, "Failed to download", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        storagereference = firebasestorage.getInstance().getReference();
+//        ref = storagereference.child("Uploads/ .pdf");
+//
+//        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                String url = uri.toString();
+//                downloadFiles(MainActivity.this, "file", ".pdf", DIRECTORY_DOWNLOADS, url);
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Context context = getApplicationContext();
+//                Toast.makeText(context, "Failed to download", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     public void downloadFiles(Context context, String filename, String fileExtension, String destinationDirectory, String url) {
