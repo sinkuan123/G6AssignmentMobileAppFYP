@@ -1,8 +1,5 @@
 package com.example.android_assignment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,12 +40,12 @@ public class SignUpActivity extends AppCompatActivity {
                 String user = signupEmail.getText().toString().trim();
                 String pass = signupPassword.getText().toString().trim();
 
-                if (user.isEmpty()){
+                if (user.isEmpty()) {
                     signupEmail.setError("Email cannot be empty");
                 }
-                if (pass.isEmpty()){
+                if (pass.isEmpty()) {
                     signupPassword.setError("Password cannot be empty");
-                } else{
+                } else {
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -58,7 +58,6 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
                 }
-
             }
         });
 
