@@ -20,6 +20,7 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".UploadPdf" />
+        <activity android:name=".fetchPdf" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"

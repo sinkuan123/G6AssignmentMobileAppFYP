@@ -37,9 +37,6 @@ import com.google.firebase.storage.StorageReference;
 
 public class MainActivity extends AppCompatActivity {
 
-    FirebaseStorage firebasestorage;
-    StorageReference storagereference;
-    StorageReference ref;
     private ActivityMainBinding binding;
 
     @Override
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                download();
+                startActivity(new Intent(MainActivity.this, fetchPdf.class));
             }
         });
 
@@ -87,34 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, UploadPdf.class));
             }
         });
-    }
-
-    public void download() {
-//        storagereference = firebasestorage.getInstance().getReference();
-//        ref = storagereference.child("Uploads/ .pdf");
-//
-//        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                String url = uri.toString();
-//                downloadFiles(MainActivity.this, "file", ".pdf", DIRECTORY_DOWNLOADS, url);
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Context context = getApplicationContext();
-//                Toast.makeText(context, "Failed to download", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-    }
-
-    public void downloadFiles(Context context, String filename, String fileExtension, String destinationDirectory, String url) {
-        DownloadManager downloadmanager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri = Uri.parse(url);
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalFilesDir(context, destinationDirectory, filename + fileExtension);
-        downloadmanager.enqueue(request);
     }
 
 }
