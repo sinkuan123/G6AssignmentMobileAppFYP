@@ -1,8 +1,11 @@
 package com.example.android_assignment;
 
+import android.widget.TextView;
+
 public class pdf {
 
     public String name, url;
+
 
     public pdf(String name, String url) {
         this.name = name;
