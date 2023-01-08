@@ -15,13 +15,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private EditText signupEmail, signupPassword;
     private Button signupButton;
-    private TextView loginRedirectText;
+    private TextView loginRedirectText, userName;
+    FirebaseDatabase db;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +37,14 @@ public class SignUpActivity extends AppCompatActivity {
         signupPassword = findViewById(R.id.signup_password);
         signupButton = findViewById(R.id.signup_button);
         loginRedirectText = findViewById(R.id.loginRedirectText);
+        userName = findViewById(R.id.etrusername);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = signupEmail.getText().toString().trim();
                 String pass = signupPassword.getText().toString().trim();
+                String Name = userName.getText().toString().trim();
 
                 if (user.isEmpty()) {
                     signupEmail.setError("Email cannot be empty");
@@ -46,6 +52,17 @@ public class SignUpActivity extends AppCompatActivity {
                 if (pass.isEmpty()) {
                     signupPassword.setError("Password cannot be empty");
                 } else {
+
+                    Users users = new Users(Name);
+                    db = FirebaseDatabase.getInstance();
+                    reference = db.getReference("Users");
+                    reference.child(Name).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            userName.setText("");
+                        }
+                    });
+
                     auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
