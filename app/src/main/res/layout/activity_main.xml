@@ -85,58 +85,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
-        android:text="Tittle: "
+        android:text="Note: "
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/upload"
         app:layout_constraintEnd_toEndOf="@+id/textHome"
-        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="@+id/textHome"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759" />
-
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ID: "
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/upload"
-        app:layout_constraintEnd_toEndOf="@+id/textHome"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="@+id/textHome"
-        app:layout_constraintTop_toTopOf="@+id/textHome"
-        app:layout_constraintVertical_bias="0.189" />
-
-    <TextView
-        android:id="@+id/idcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/idcode"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/upload"
-        app:layout_constraintEnd_toEndOf="@+id/textHome"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toStartOf="@+id/textHome"
-        app:layout_constraintTop_toBottomOf="@+id/id"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.662" />
 
     <TextView
         android:id="@+id/titlename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="248dp"
-        android:text="@string/titlename"
+        android:text="Set Your file tittle properly"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/upload"
         app:layout_constraintEnd_toEndOf="@+id/textHome"
-        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="@+id/textHome"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.777" />
 
     <Button
         android:id="@+id/download"

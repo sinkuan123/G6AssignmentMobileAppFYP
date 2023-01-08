@@ -15,8 +15,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     DataSnapshot dataSnapshot = task.getResult();
-                    String gotName = String.valueOf(dataSnapshot.child("userName").getChildrenCount());
+                    String gotName = String.valueOf(dataSnapshot.child("userName").getValue());
                     binding.userName.setText(gotName);
-                    Toast.makeText(MainActivity.this, "Got user name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Got username", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Failed to get user name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Failed to get username", Toast.LENGTH_SHORT).show();
                 }
             }
         });
