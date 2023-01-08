@@ -1,7 +1,5 @@
 package com.example.android_assignment;
 
-import android.widget.TextView;
-
 public class Users {
 
     String userName;
