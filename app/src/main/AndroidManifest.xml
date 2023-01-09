@@ -17,10 +17,12 @@
         android:theme="@style/Theme.Android_assignment"
         tools:targetApi="31">
 
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".UploadPdf" />
         <activity android:name=".fetchPdf" />
+        <activity android:name=".WorkActivity" />
+        <activity android:name=".MarkActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -35,7 +37,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>
