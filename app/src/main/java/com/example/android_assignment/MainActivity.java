@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button logout = findViewById(R.id.logout);
         Button upload = findViewById(R.id.upload);
 
-        String Name = binding.userName.getText().toString();
-
-        readUser(Name);
+//        readUser();
 
         download.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,21 +65,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void readUser(String Name) {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.child(Name).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DataSnapshot dataSnapshot = task.getResult();
-                    String gotName = String.valueOf(dataSnapshot.child("userName").getValue());
-                    binding.userName.setText(gotName);
-                    Toast.makeText(MainActivity.this, "Got username", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Failed to get username", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
+//    private void readUser() {
+//        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+//        databaseReference.child("userName").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    DataSnapshot dataSnapshot = task.getResult();
+//                    String gotName = String.valueOf(dataSnapshot.child("userName").getValue());
+//                    binding.userName.setText(gotName);
+//                    Toast.makeText(MainActivity.this, "Got username", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(MainActivity.this, "Failed to get username", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//    }
 
 }
