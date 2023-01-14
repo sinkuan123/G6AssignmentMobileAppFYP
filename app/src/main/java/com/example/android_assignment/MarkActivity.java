@@ -1,6 +1,7 @@
 package com.example.android_assignment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MarkActivity extends AppCompatActivity {
 
-    Button navHome, navMark, navWork, comment_btn;
+    Button navHome, navMark, navWork, comment_btn, logout;
     EditText title, mark, comment;
     int i = 0;
 
@@ -34,6 +36,21 @@ public class MarkActivity extends AppCompatActivity {
         navMark = findViewById(R.id.navMark);
         navHome = findViewById(R.id.navHome);
         navWork = findViewById(R.id.navWork);
+        logout = findViewById(R.id.logout);
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MarkActivity.this, LoginActivity.class));
+                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("remember", "false");
+                editor.apply();
+                finish();
+            }
+        });
 
         comment_btn.setOnClickListener(new View.OnClickListener() {
             @Override

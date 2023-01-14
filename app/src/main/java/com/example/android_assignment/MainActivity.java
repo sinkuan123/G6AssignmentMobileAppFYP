@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Button download = findViewById(R.id.download);
         Button logout = findViewById(R.id.logout);
         Button upload = findViewById(R.id.upload);
+        Button quiz  = findViewById(R.id.Quiz);
 
         download.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, UploadPdf.class));
+            }
+        });
+
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, QuizActivity.class));
             }
         });
 
